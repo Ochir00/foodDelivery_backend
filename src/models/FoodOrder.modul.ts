@@ -1,12 +1,12 @@
 import mongoose, { Schema } from "mongoose";
-type FoodSchematype = {
+type FoodOrderSchematype = {
   foodName: String;
   price: number;
   image: string;
   ingredients: string;
   category: string;
 };
-const FoodSchema: Schema = new Schema(
+const FoodOrderSchema: Schema = new Schema(
   {
     foodName: { type: String, required: true },
     price: { type: Number, required: true },
@@ -16,7 +16,7 @@ const FoodSchema: Schema = new Schema(
   },
   { timestamps: true }
 );
-export default mongoose.model<FoodSchematype>(
-  "food",
-  FoodSchema
+export default mongoose.model<FoodOrderSchematype>(
+  "FoodOrder",
+  FoodOrderSchema
 );
