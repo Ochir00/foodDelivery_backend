@@ -5,6 +5,7 @@ type FoodOrderSchematype = {
   image: string;
   ingredients: string;
   category: string;
+  status: "PENDING" | "CANCELED" | "DELIVERED";
 };
 const FoodOrderSchema: Schema = new Schema(
   {
@@ -13,6 +14,7 @@ const FoodOrderSchema: Schema = new Schema(
     image: { type: String, required: true },
     ingredients: { type: String, required: true },
     category: { type: String, required: true },
+    role: {type:["PENDING", "CANCELED","DELIVERED"]}
   },
   { timestamps: true }
 );
