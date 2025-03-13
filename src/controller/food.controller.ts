@@ -3,9 +3,10 @@ import foodModel from "../models/food.model";
 
 export const getfooddata = async (req: Request, res: Response) => {
     const { id }= req.params;
+    const foods = await foodModel.find().populate("");
   try {
     const allData = await foodModel.find({ _id : id});
-    res.status(200).json({ messege: "bolson2", data: allData });
+    res.status(200).json({ messege: "bolson2", data: foods });
   } catch (error) {
     res.status(500).json({ messege: "error pzda", error });
   }
