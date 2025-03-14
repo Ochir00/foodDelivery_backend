@@ -14,7 +14,7 @@ const FoodSchema: Schema = new Schema(
     ingredients: { type: String, required: true },
     category: { 
        type: Schema.Types.ObjectId,
-       href: "FoodCategory",
+       ref: "FoodCategory",
        required: true },
   },
   { timestamps: true }
